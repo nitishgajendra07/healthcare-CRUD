@@ -1,9 +1,17 @@
 const express = require('express');
-const { addService, getAllServices } = require('../controllers/service.controller');
+const { addService, getAllServices, updateService } = require('../controllers/service.controller');
 
 const serviceRouter = express.Router();
 
-serviceRouter.post('/add', addService)
-    .get('/list', getAllServices)
+
+
+serviceRouter.route('/')
+    .post(addService)
+    .get(getAllServices)
+
+serviceRouter.route('/:id')
+    .patch(updateService)
+
+
 
 module.exports = serviceRouter;

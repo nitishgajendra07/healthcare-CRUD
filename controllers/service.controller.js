@@ -40,6 +40,44 @@ async function getAllServices(req, res) {
     }
 }
 
+async function updateService(req, res) {
+    try {
+        console.log("Entered updateService")
+        const { id } = req.params;
+        const { serviceName, description, price } = req.body;
+        if (description && !description.trim()) {
+            return res.status(400).json({ error: "Invalid description" });
+        }
+        if (price && isNaN(price)) {
+            return res.status(400).json({ error: "Invalid price" });
+        }
+        if (serviceName) {
+            if (!serviceName.trim()) {
+                return res.status(400).json({ error: "Invalid service name" });
+            }
+            const existingService = await healthcareServiceModel.find({ serviceName });
+            if (existingService) {
+                return res.status(400).json({ error: "service with this name already exists" });
+            }
+        }
+
+        const updatedService = await healthcareServiceModel.findByIdAndUpdate(id, {
+            serviceName,
+            description,
+            price
+        },
+            {
+                new: true
+            })
+
+        res.status(200).json({ message: "updated successfully", updatedService })
 
 
-module.exports = { addService, getAllServices }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
+
+
+
+module.exports = { addService, getAllServices, updateService }
