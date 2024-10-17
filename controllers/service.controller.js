@@ -30,6 +30,16 @@ async function addService(req, res) {
     }
 }
 
+async function getAllServices(req, res) {
+    try {
+        const services = await healthcareServiceModel.find();
+        res.status(200).json(services);
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
 
 
-module.exports = { addService }
+
+module.exports = { addService, getAllServices }

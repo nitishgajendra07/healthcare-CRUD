@@ -1,8 +1,9 @@
 const express = require('express');
-const { addService } = require('../controllers/service.controller');
+const { addService, getAllServices } = require('../controllers/service.controller');
 
 const serviceRouter = express.Router();
 
 serviceRouter.post('/add', addService)
+    .get('/list', getAllServices)
 
 module.exports = serviceRouter;
