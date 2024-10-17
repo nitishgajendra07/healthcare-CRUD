@@ -78,6 +78,19 @@ async function updateService(req, res) {
     }
 }
 
+async function deleteService(req, res) {
+    try {
+        const { id } = req.params;
+        const deletedService = await healthcareServiceModel.findByIdAndDelete(id);
+        if (!deletedService) {
+            return res.status(200).json({ error: "Service not found" });
+        }
+        res.status(200).json({ message: 'Service deleted successfully', deletedService });
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
 
 
-module.exports = { addService, getAllServices, updateService }
+
+module.exports = { addService, getAllServices, updateService, deleteService }

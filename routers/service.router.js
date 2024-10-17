@@ -1,5 +1,5 @@
 const express = require('express');
-const { addService, getAllServices, updateService } = require('../controllers/service.controller');
+const { addService, getAllServices, updateService, deleteService } = require('../controllers/service.controller');
 
 const serviceRouter = express.Router();
 
@@ -11,6 +11,7 @@ serviceRouter.route('/')
 
 serviceRouter.route('/:id')
     .patch(updateService)
+    .delete(deleteService)
 
 
 
