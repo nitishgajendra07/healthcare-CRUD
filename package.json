@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index"
+    "dev": "nodemon index",
+    "start": "node index",
+    "seed": "node db/seedDB"
   },
   "author": "",
   "license": "ISC",

@@ -1,0 +1,53 @@
+[
+    {
+      "serviceName": "General Consultation",
+      "description": "A routine check-up with a healthcare professional to assess your overall health and address any concerns.",
+      "price": 50
+    },
+    {
+      "serviceName": "Dental Cleaning",
+      "description": "Professional cleaning to remove plaque and tartar from your teeth, improving oral health.",
+      "price": 75
+    },
+    {
+      "serviceName": "Blood Test",
+      "description": "A comprehensive blood analysis to check for various conditions and ensure optimal health.",
+      "price": 100
+    },
+    {
+      "serviceName": "X-Ray",
+      "description": "An imaging procedure used to diagnose bone fractures, infections, and other internal issues.",
+      "price": 150
+    },
+    {
+      "serviceName": "Physical Therapy",
+      "description": "Rehabilitation therapy to improve mobility, reduce pain, and restore physical function after injury.",
+      "price": 120
+    },
+    {
+      "serviceName": "Vaccination",
+      "description": "Immunization shots to prevent various infectious diseases, including flu and hepatitis.",
+      "price": 40
+    },
+    {
+      "serviceName": "Mental Health Counseling",
+      "description": "One-on-one sessions with a licensed therapist to address mental health concerns.",
+      "price": 85
+    },
+    {
+      "serviceName": "Eye Examination",
+      "description": "A detailed eye check-up to assess vision and diagnose eye conditions.",
+      "price": 60
+    },
+    {
+      "serviceName": "MRI Scan",
+      "description": "Advanced imaging procedure used to detect abnormalities in soft tissues and organs.",
+      "price": 500
+    },
+    {
+      "serviceName": "Prenatal Care",
+      "description": "Comprehensive care and monitoring for pregnant women to ensure a healthy pregnancy.",
+      "price": 200
+    }
+  ]
+  
